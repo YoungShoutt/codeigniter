@@ -1,0 +1,54 @@
+
+<?php
+//apc_clear_cache();
+//apc_clear_cache('user');
+/* buat clear apache*/
+?>
+
+<html>
+ <head>
+  <title>Form Login</title>
+ <script type="text/javascript">
+ $(document).ready(function(){
+ 	$("input[name=username]").focus();
+ 	$('.form-3').attr('autocomplete', 'off');
+ });
+ </script>
+ </head>
+ <body>
+ 
+<div class="container" style=" position:relative;
+ top:0;
+ right:0;
+ width:120px;">
+ <section class="main">
+ <form class="form-3" action="<?php echo base_url();?>index.php/login/login/login_form" method="post" name="login">
+ 	
+				
+				    <p class="clearfix">
+				        <label for="login">Username</label>
+						<input type="text" size="40" name="username" value="<?php echo set_value('username');?>" class="inputan" autocomplete="off"> <?php echo form_error('username');?> 
+					</p>
+				    <p class="clearfix">
+				        <label for="password">Password</label>
+						<input type="password" size="40" name="password" value="<?php echo set_value('password');?>" class="inputan" autocomplete="off"> <?php echo form_error('password');?>
+						<input type="hidden" size="40" name="url" value="<?php echo  $_SERVER['HTTP_REFERER'];?>" class="inputan"> 
+						<input type="hidden" size="40" name="index" value="<?php echo  $_GET['a'] ?>" class="inputan"> 
+					</p>
+				    <p class="clearfix">
+						<label></label>
+					</p>
+				    <p class="clearfix">
+					<input type="submit" name="login" value="Login" class="tombol">
+					</p>
+      
+  				</form>
+
+  </section>
+  </div>
+  <p><h1 style="color:red;background-color: black;margin-left: 10px;margin-right: 10px;"></h1> </p>
+<div  style=" position:relative; top:-150px; left:350px; width:120px;">
+	<!--<img style="position: relative;" src="<?php echo base_url() ?>images/maintenance.gif" width="150px">-->
+</div>
+ </body>
+</html>
